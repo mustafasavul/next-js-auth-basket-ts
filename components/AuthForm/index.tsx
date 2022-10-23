@@ -50,7 +50,7 @@ function AuthForm() {
 
       if (!result.error) {
         // set some auth state
-        router.replace('/profile');
+        router.replace('/');
       }
     } else {
       try {
@@ -63,7 +63,7 @@ function AuthForm() {
   }
 
   return (
-    <section className={classes.auth}>
+    <div className={classes.auth}>
       <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
@@ -90,7 +90,7 @@ function AuthForm() {
           </button>
         </div>
       </form>
-    </section>
+    </div>
   );
 }
 

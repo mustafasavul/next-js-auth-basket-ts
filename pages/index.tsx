@@ -1,10 +1,12 @@
-import StartingPageContent from 'components/starting-page/starting-page';
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
+import { Text, VStack, Button } from '@chakra-ui/react';
+import Products from 'components/Products';
 
-const Home: NextPage = () => {
-  return <StartingPageContent />;
-};
-
-export default Home;
+export default function Home() {
+  return (
+    <>
+      <VStack spacing={4}>
+        <Products />
+      </VStack>
+    </>
+  );
+}

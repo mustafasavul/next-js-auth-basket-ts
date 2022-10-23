@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Nunito Sans', sans-serif !important;
 }
 
 a {
@@ -27,7 +28,22 @@ a {
 
 /* //EDİTLENCEK */
 
-section {
+.auth-main {
+  height: 100vh;
+}
+
+.auth-bg {
+  background: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3000&q=80')
+    no-repeat;
+  background-size: cover;
+  filter: blur(4px);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* section {
   width: 100%;
   max-width: 420px;
   min-height: 400px;
@@ -36,7 +52,7 @@ section {
   justify-content: flex-start;
   padding: 1rem;
   background-color: rgba(0, 0, 0, 0.4);
-}
+} */
 
 form {
   display: flex;
