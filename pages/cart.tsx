@@ -6,18 +6,7 @@ export default function Cart() {
   const products = useSelector((state: any) => state.cart);
 
   return (
-    <Box
-      maxW={{
-        base: '3xl',
-        lg: '7xl',
-      }}
-      mx="auto"
-      px={{
-        base: '4',
-        md: '8',
-        lg: '12',
-      }}
-    >
+    <Box mx="auto">
       <Flex direction="column" align="center" flex="1">
         <CartOrderSummary products={products} />
       </Flex>

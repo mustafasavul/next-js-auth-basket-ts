@@ -5,6 +5,7 @@ import classes from './productCard.module.css';
 import { AddIcon } from '@chakra-ui/icons';
 import useTranslation from 'next-translate/useTranslation';
 import { BsStarFill } from 'react-icons/bs';
+import { toast } from 'react-toastify';
 
 const ProductCard = (props) => {
   const dispatch = useDispatch();
@@ -14,6 +15,16 @@ const ProductCard = (props) => {
 
   const addToCart = () => {
     dispatch(add(product));
+    toast.success(t('common:addedToCart'), {
+      position: 'top-right',
+      autoClose: 500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'dark',
+    });
   };
 
   return (

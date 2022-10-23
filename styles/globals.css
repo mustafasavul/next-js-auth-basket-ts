@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap');
+@import 'ReactToastify.css';
 
 html,
 body {
@@ -27,6 +28,16 @@ a {
 }
 
 /* //EDİTLENCEK */
+
+.header-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.header-list li {
+  margin-right: 1rem;
+}
 
 .auth-main {
   height: 100vh;

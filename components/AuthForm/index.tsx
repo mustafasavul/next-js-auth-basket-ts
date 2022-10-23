@@ -3,6 +3,7 @@ import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import useTranslation from 'next-translate/useTranslation';
 import classes from './auth-form.module.css';
+import { toast } from 'react-toastify';
 
 async function createUser(email, password) {
   const response = await fetch('/api/auth/signup', {
@@ -49,6 +50,8 @@ function AuthForm() {
         password: enteredPassword,
       });
 
+      localStorage.setItem('tpComSignIn', 'true');
+
       if (!result.error) {
         // set some auth state
         router.replace('/');
@@ -56,9 +59,11 @@ function AuthForm() {
     } else {
       try {
         const result = await createUser(enteredEmail, enteredPassword);
+        toast.success(result.message);
         console.log(result);
       } catch (error) {
         console.log(error);
+        toast.error(error?.message);
       }
     }
   }
@@ -80,6 +85,7 @@ function AuthForm() {
             ref={passwordInputRef}
           />
         </div>
+
         <div className={classes.actions}>
           <button>
             {isLogin ? t('common:login') : t('common:createAccount')}
