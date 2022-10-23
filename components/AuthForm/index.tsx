@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { signIn } from 'next-auth/client';
 import { useRouter } from 'next/router';
-
+import useTranslation from 'next-translate/useTranslation';
 import classes from './auth-form.module.css';
 
 async function createUser(email, password) {
@@ -28,6 +28,7 @@ function AuthForm() {
 
   const [isLogin, setIsLogin] = useState(true);
   const router = useRouter();
+  const { t } = useTranslation();
 
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
@@ -64,14 +65,14 @@ function AuthForm() {
 
   return (
     <div className={classes.auth}>
-      <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
+      <h1>{isLogin ? t('common:login') : t('common:singUp')}</h1>
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor="email">Your Email</label>
+          <label htmlFor="email">{t('common:yourEmail')}</label>
           <input type="email" id="email" required ref={emailInputRef} />
         </div>
         <div className={classes.control}>
-          <label htmlFor="password">Your Password</label>
+          <label htmlFor="password">{t('common:yourPassword')}</label>
           <input
             type="password"
             id="password"
@@ -80,13 +81,15 @@ function AuthForm() {
           />
         </div>
         <div className={classes.actions}>
-          <button>{isLogin ? 'Login' : 'Create Account'}</button>
+          <button>
+            {isLogin ? t('common:login') : t('common:createAccount')}
+          </button>
           <button
             type="button"
             className={classes.toggle}
             onClick={switchAuthModeHandler}
           >
-            {isLogin ? 'Create new account' : 'Login with existing account'}
+            {isLogin ? t('common:createAccount') : t('common:existingAccount')}
           </button>
         </div>
       </form>

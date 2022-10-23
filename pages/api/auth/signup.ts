@@ -1,6 +1,5 @@
 import { hashPassword } from 'lib/auth';
 import { connectToDatabase } from 'lib/db';
-import { toast } from 'react-toastify';
 
 async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -17,8 +16,7 @@ async function handler(req, res) {
     password.trim().length < 7
   ) {
     res.status(422).json({
-      message:
-        toast('Invalid input - password should also be at least 7 characters long.')
+      message: 'Invalid input - password should also be at least 7 characters long.'
     });
     return;
   }
@@ -30,7 +28,9 @@ async function handler(req, res) {
   const existingUser = await db.collection('users').findOne({ email: email });
 
   if (existingUser) {
-    res.status(422).json({ message: toast('User exists already!') });
+    res.status(422).json({
+      message: 'User exists already!'
+    });
     client.close();
     return;
   }

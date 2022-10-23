@@ -1,4 +1,4 @@
-import { Text, VStack, Button } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 import Products from 'components/Products';
 
 export default function Home() {

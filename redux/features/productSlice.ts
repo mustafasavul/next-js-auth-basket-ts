@@ -1,12 +1,10 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
 
 export const STATUSES = Object.freeze({
   IDLE: "idle",
   ERROR: "error",
   LOADING: "loading",
 });
-
 
 export interface ProductState {
   data: [];

@@ -1,22 +1,16 @@
-import {
-  Box,
-  Button,
-  Image,
-  Skeleton,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
-
-import Rating from '../Rating';
+import { Box, Image, Skeleton } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { add } from 'redux/features/cartSlice';
 import classes from './productCard.module.css';
 import { AddIcon } from '@chakra-ui/icons';
+import useTranslation from 'next-translate/useTranslation';
+import { BsStarFill } from 'react-icons/bs';
 
 const ProductCard = (props) => {
   const dispatch = useDispatch();
   const { product } = props;
   const { image, title, price, rating, description } = product;
+  const { t } = useTranslation();
 
   const addToCart = () => {
     dispatch(add(product));
@@ -49,10 +43,13 @@ const ProductCard = (props) => {
           </div>
 
           <div className={classes.productCardRating}>
-            <Rating defaultValue={Math.ceil(rating.rate)} size="sm" />
+            <BsStarFill color="#ECD03F" />
+            {rating?.rate}
           </div>
 
-          <div className={classes.productCardPrice}>Fiyat {price} TL</div>
+          <div className={classes.productCardPrice}>
+            {t('common:price')} {price} TL
+          </div>
         </div>
 
         <div>
@@ -60,7 +57,7 @@ const ProductCard = (props) => {
             <span>
               <AddIcon w={6} h={6} color="#0078E3" />
             </span>
-            Add to cart
+            {t('common:addToCart')}
           </button>
         </div>
       </div>

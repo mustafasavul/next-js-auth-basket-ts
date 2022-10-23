@@ -15,7 +15,6 @@ const borderRadius = {
 }
 
 const config = {
-  initialColorMode: "dark",
   useSystemColorMode: false,
 };
 

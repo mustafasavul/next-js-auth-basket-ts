@@ -6,12 +6,14 @@ import Loading from '../Loading';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProducts, STATUSES } from 'redux/features/productSlice';
 import Cart from 'pages/cart';
+import useTranslation from 'next-translate/useTranslation';
 
 export interface IRootState {
   product: any;
 }
 
 const Products = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch<any>();
   const { data: products, status } = useSelector(
     (state: IRootState) => state.product
@@ -26,7 +28,7 @@ const Products = () => {
   }
 
   if (status === STATUSES.ERROR) {
-    return <h2>Something went wrong!</h2>;
+    return <h2>{t('common:somethingWentWrong')}</h2>;
   }
 
   return (
@@ -49,7 +51,6 @@ const Products = () => {
           <ProductCard key={product.id} product={product} />
         ))}
       </ProductGrid>
-
       <Cart />
     </Box>
   );

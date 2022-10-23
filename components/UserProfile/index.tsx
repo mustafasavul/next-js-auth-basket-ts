@@ -1,7 +1,10 @@
 import ProfileForm from 'components/Profile';
+import useTranslation from 'next-translate/useTranslation';
 import classes from './user-profile.module.css';
 
 function UserProfile() {
+  const { t } = useTranslation();
+
   async function changePasswordHandler(passwordData) {
     const response = await fetch('/api/user/change-password', {
       method: 'PATCH',
@@ -12,13 +15,11 @@ function UserProfile() {
     });
 
     const data = await response.json();
-
-    console.log(data);
   }
 
   return (
     <section className={classes.profile}>
-      <h1>Your User Profile</h1>
+      <h1>{t('common:userProfile')}</h1>
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>
   );

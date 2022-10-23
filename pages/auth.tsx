@@ -1,12 +1,14 @@
 import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/client';
 import { useEffect, useState } from 'react';
-
 import AuthForm from 'components/AuthForm';
+import useTranslation from 'next-translate/useTranslation';
 
 function AuthPage() {
   const [isLoading, setIsLoading] = useState(true);
   const router = useRouter();
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     getSession().then((session) => {
@@ -19,7 +21,7 @@ function AuthPage() {
   }, [router]);
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p> {t('common:loading')} </p>;
   }
 
   return (
