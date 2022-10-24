@@ -18,8 +18,6 @@ const CartOrderSummary = ({ products }: CartOrderSummaryProps) => {
     total += product.price;
   });
 
-  total.toFixed(2);
-
   const totalMessage = total + (total * 10) / 100;
 
   return (

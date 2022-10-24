@@ -4,7 +4,7 @@ export interface Rating {
 }
 
 export interface Product {
-  forEach(arg0: (item: any) => void): unknown;
+  forEach(arg0: (product: any) => void): unknown;
   id?: number;
   title?: string;
   price?: number;

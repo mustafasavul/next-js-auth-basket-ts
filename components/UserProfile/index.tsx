@@ -2,6 +2,7 @@ import ProfileForm from 'components/ProfileForm';
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 import classes from './user-profile.module.css';
+import { Button } from '@chakra-ui/react';
 
 function UserProfile() {
   const { t } = useTranslation();
@@ -23,7 +24,9 @@ function UserProfile() {
       <h1>{t('common:userProfile')}</h1>
 
       <Link href="/">
-        <a>Home</a>
+        <Button colorScheme="teal" mb={4}>
+          Home
+        </Button>
       </Link>
 
       <ProfileForm onChangePassword={changePasswordHandler} />

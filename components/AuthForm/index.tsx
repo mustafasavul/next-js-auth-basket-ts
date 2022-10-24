@@ -74,13 +74,20 @@ function AuthForm() {
       <form onSubmit={submitHandler}>
         <div className={classes.control}>
           <label htmlFor="email">{t('common:yourEmail')}</label>
-          <input type="email" id="email" required ref={emailInputRef} />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            ref={emailInputRef}
+          />
         </div>
         <div className={classes.control}>
           <label htmlFor="password">{t('common:yourPassword')}</label>
           <input
             type="password"
             id="password"
+            name="password"
             required
             ref={passwordInputRef}
           />
