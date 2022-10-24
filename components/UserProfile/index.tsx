@@ -1,5 +1,6 @@
 import ProfileForm from 'components/Profile';
 import useTranslation from 'next-translate/useTranslation';
+import Link from 'next/link';
 import classes from './user-profile.module.css';
 
 function UserProfile() {
@@ -20,6 +21,11 @@ function UserProfile() {
   return (
     <section className={classes.profile}>
       <h1>{t('common:userProfile')}</h1>
+
+      <Link href="/">
+        <a>Home</a>
+      </Link>
+
       <ProfileForm onChangePassword={changePasswordHandler} />
     </section>
   );

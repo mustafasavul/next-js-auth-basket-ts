@@ -9,3 +9,4 @@ export { default as Products } from './Products';
 export { default as Profile } from './Profile';
 export { default as UserProfile } from './UserProfile';
 export { default as StartingPage } from './StartingPage';
+export { default as StickyNavbar } from './StickyNavbar';

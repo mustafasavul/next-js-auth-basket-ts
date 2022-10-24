@@ -1,0 +1,20 @@
+.stickyNavbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: #eceaea;
+  width: 100%;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 10px 15px #c8c9cd);
+}
+
+@media (min-width: 769px) {
+  .stickyNavbar {
+    display: none;
+  }
+}
