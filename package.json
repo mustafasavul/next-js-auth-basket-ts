@@ -16,7 +16,6 @@
     "@emotion/styled": "^11",
     "@reduxjs/toolkit": "^1.8.6",
     "@svgr/webpack": "^6.5.0",
-    "axios": "^1.1.3",
     "bcryptjs": "^2.4.3",
     "framer-motion": "^6",
     "mongodb": "^3.6.4",
