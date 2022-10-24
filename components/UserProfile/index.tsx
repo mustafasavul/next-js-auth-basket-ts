@@ -1,4 +1,4 @@
-import ProfileForm from 'components/Profile';
+import ProfileForm from 'components/ProfileForm';
 import useTranslation from 'next-translate/useTranslation';
 import Link from 'next/link';
 import classes from './user-profile.module.css';

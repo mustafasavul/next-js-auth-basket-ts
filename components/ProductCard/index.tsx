@@ -41,6 +41,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           fallback={<Skeleton />}
           boxShadow="lg"
           borderRadius="xl"
+          loading="lazy"
         />
       </Box>
 

@@ -1,5 +1,13 @@
 const nextTranslate = require('next-translate');
-require('next-pwa');
+const withPWA = require('next-pwa');
+
+const pwa = withPWA({
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  },
+});
 
 module.exports = nextTranslate({
   reactStrictMode: true,
@@ -12,9 +20,5 @@ module.exports = nextTranslate({
 
     return config;
   },
-  pwa: {
-    dest: 'public',
-    register: true,
-    skipWaiting: true,
-  },
+  ...pwa,
 });
