@@ -5,11 +5,11 @@ import {
   Text,
   useColorModeValue as mode,
 } from '@chakra-ui/react';
+import { CartOrderSummaryProps } from 'model';
 import useTranslation from 'next-translate/useTranslation';
 import * as React from 'react';
 
-const CartOrderSummary = (props) => {
-  const { products } = props;
+const CartOrderSummary = ({ products }: CartOrderSummaryProps) => {
   let total = 0;
 
   const { t } = useTranslation('common');

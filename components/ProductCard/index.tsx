@@ -6,10 +6,11 @@ import { AddIcon } from '@chakra-ui/icons';
 import useTranslation from 'next-translate/useTranslation';
 import { BsStarFill } from 'react-icons/bs';
 import { toast } from 'react-toastify';
+import { ProductCardProps } from 'model';
 
-const ProductCard = (props) => {
+const ProductCard = ({ product }: ProductCardProps) => {
   const dispatch = useDispatch();
-  const { product } = props;
+
   const { image, title, price, rating, description } = product;
   const { t } = useTranslation();
 

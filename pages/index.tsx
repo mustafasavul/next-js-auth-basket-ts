@@ -13,8 +13,6 @@ export default function Home() {
     }
   }, []);
 
-  console.log(storage);
-
   return (
     <>
       <VStack spacing={4}>
