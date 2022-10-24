@@ -27,8 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://raw.githubusercontent.com/mustafasavul/next-js-auth-basket-ts/main/next-auth-ts-redux.png?token=GHSAT0AAAAAABYSNWCR7XKTHWMNKPAUOOWQY2WSCSQ)
+![next-auth-ts-redux](https://user-images.githubusercontent.com/19707331/197538822-4f9f7da5-cc6d-4d8b-bf03-ef8609a4aa19.png)
 
 ### Built With
 
