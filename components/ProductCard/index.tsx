@@ -46,9 +46,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
       <div className={classes.productCardInfo}>
         <div>
-          <div className={classes.productCardTitle}>
-            {title.substring(0, 20)}
-          </div>
+          <h3 className={classes.productCardTitle}>{title.substring(0, 20)}</h3>
 
           <div className={classes.productCardDescription}>
             {description.substring(0, 40)}...
